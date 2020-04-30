@@ -205,7 +205,7 @@ export class Modem {
             .replace(/\//gi, '-')
             .split(',');
           newSMS.phoneNumber = +cmgr[1].replace('+', '00').replace(/00351/, '');
-          newSMS.submitTime = new Date(today.getFullYear() + cmgr[3].slice(2) + ' ' + cmgr[4]);
+          newSMS.submitTime = today.getFullYear() + cmgr[3].slice(2) + ' ' + cmgr[4];
           return null;
         }
         newSMS.text = newSMS.text ? newSMS.text + data : data;
